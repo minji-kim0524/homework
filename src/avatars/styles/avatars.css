@@ -1,1 +1,27 @@
 /* 여기에 스타일을 구현해 주세요 */
+.container {
+  border: 1px solid black;
+  padding: 100px;
+  background-color: #ffffff;
+  width: 430px;
+  height: 195px;
+}
+.topFace,
+.bottomFace {
+  display: inline;
+  position: relative;
+}
+
+img {
+  border-radius: 30px;
+  width: 64px;
+  height: 64px;
+  margin: 20px;
+}
+
+svg {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  margin: 20px;
+}
