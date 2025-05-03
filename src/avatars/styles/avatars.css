@@ -5,6 +5,8 @@
   background-color: #ffffff;
   width: 430px;
   height: 195px;
+  margin: auto;
+  margin-top: 350px;
 }
 .topFace,
 .bottomFace {
