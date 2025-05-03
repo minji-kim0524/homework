@@ -8,8 +8,8 @@
   margin: auto;
   margin-top: 350px;
 }
-.topFace,
-.bottomFace {
+.womanFace,
+.manFace {
   display: inline;
   position: relative;
 }
