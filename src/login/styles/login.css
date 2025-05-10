@@ -1,6 +1,8 @@
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+
 :root {
   /* 글자크기 */
+  --text-12: 0.75rem;
   --text-14: 0.875rem;
   --text-16: 1rem;
 
@@ -8,10 +10,13 @@
   --black: #121212;
   --darkBlue: #24388d;
   --lightBlue: #e9f0fd;
+  --silver: #999999;
   --silverLight: #dadada;
   --white: #fff;
   --naverGreen: #03cf5d;
+  --red: #ff1414;
 
+  /* 사이즈 */
   --height-45: 45px;
 }
 
@@ -20,50 +25,88 @@
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: 0.0625rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
 }
 
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin: 0 auto;
+
+  a,
+  h1 {
+    align-self: flex-start;
+    margin-left: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 .naverLogin {
   font-size: var(--text-16);
   color: var(--black);
 
+      @media (width >= 48rem) {
+      position: relative;
+      max-width: 31.25rem;
+    }
+
+  width: 100%;
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+
   .logo {
-    --logo-naver: 230px;
+    --logo-naver: 14.375rem;
 
     width: var(--logo-naver);
     margin: 0 auto;
+    margin-top: 4.375rem;
+    margin-bottom: 2.8125rem;
   }
 
-  form {
+  .inputGroup {
     margin-top: 2.8125rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
 
-    input {
-      width: calc(100% - 16px);
-      background: var(--white);
-      border: 1px solid var(--silverLight);
-      height: var(--height-45);
-      font-size: var(--text-14);
-      padding-left: 0.875rem;
-      margin-bottom: 0.625rem;
+    .formInput {
+      .errorMessage {
+        display: none;
+        color: var(--red);
+      }
+
+      input:invalid:focus + .errorMessage {
+        display: block;
+      }
+
+      input {
+        width: calc(100% - 16px);
+        background: var(--white);
+        border: 1px solid var(--silverLight);
+        height: var(--height-45);
+        font-size: var(--text-14);
+        padding-left: 0.875rem;
+        margin-bottom: 0.625rem;
+      }
     }
   }
   button {
     cursor: pointer;
-
+    
     &:disabled {
       cursor: not-allowed;
     }
-
+    
     border: 0;
     padding: 0;
-    /* padding-inline: 0;
-    padding-block: 0; */
     width: 100%;
     margin-top: 1.25rem;
     background: var(--naverGreen);
@@ -71,18 +114,68 @@
     font-size: var(--text-16);
     color: var(--white);
   }
-
+  
   .loginStatus {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    right: 35px;
-    margin-top: 0.75rem;
-  }
 
-  .loginStatus .checkbox {
+    
+    margin-top: 0.75rem;
+    float: right;
+    cursor: pointer;
+    
+    @media (width >= 48rem) {
+      float: left;
+    }
+    .checkbox {
+    position: absolute;
+    margin-left: -1.5625rem;
+    margin-right: 0.25rem;
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: 0.3125rem;
+  }
+
+    input[checkbox] {
+      display: none;
+    }
+
+    .checkbox #checked {
+      display: none;
+    }
+
+    input[checkbox]:checked + .checkbox #unchecked {
+      display: none;
+    } 
+    
+    input[type="checkbox"]:checked {
+      
+      + .checkbox #checked{
+        display: block;
+      }
+       + .checkbox #unchecked {
+        display: none;
+       }
+    }
+  }
+
+  .ipMessage{
+    display: none;
+    font-size: var(--text-16);
+    color: var(--black);
+
+    @media (width >= 48rem){
+        display: block;
+        float: right;
+        margin-top: 0.625rem;
+    }
+
+    .ipStatusOff {
+      margin-left: 0.5rem;
+      color: var(--silver);
+    }
+
+    .ipStatusOn {
+      display: none;
+      color: var(--naverGreen);
+
+    }
   }
 }
