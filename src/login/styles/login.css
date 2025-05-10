@@ -56,10 +56,10 @@ body {
   font-size: var(--text-16);
   color: var(--black);
 
-      @media (width >= 48rem) {
-      position: relative;
-      max-width: 31.25rem;
-    }
+  @media (width >= 48rem) {
+    position: relative;
+    max-width: 31.25rem;
+  }
 
   width: 100%;
   margin-right: 1.25rem;
@@ -83,6 +83,11 @@ body {
         color: var(--red);
       }
 
+      input:focus {
+        border-color: var(--naverGreen);
+        background: var(--lightBlue);
+      }
+
       input:invalid:focus + .errorMessage {
         display: block;
       }
@@ -100,11 +105,11 @@ body {
   }
   button {
     cursor: pointer;
-    
+
     &:disabled {
       cursor: not-allowed;
     }
-    
+
     border: 0;
     padding: 0;
     width: 100%;
@@ -114,68 +119,60 @@ body {
     font-size: var(--text-16);
     color: var(--white);
   }
-  
-  .loginStatus {
 
-    
+  .loginStatus {
     margin-top: 0.75rem;
     float: right;
     cursor: pointer;
-    
+
     @media (width >= 48rem) {
       float: left;
     }
-    .checkbox {
+  }
+
+  .checkbox {
     position: absolute;
     margin-left: -1.5625rem;
     margin-right: 0.25rem;
     width: 1.5rem;
     height: 1.5rem;
   }
-
-    input[checkbox] {
-      display: none;
-    }
-
-    .checkbox #checked {
-      display: none;
-    }
-
-    input[checkbox]:checked + .checkbox #unchecked {
-      display: none;
-    } 
-    
-    input[type="checkbox"]:checked {
-      
-      + .checkbox #checked{
-        display: block;
-      }
-       + .checkbox #unchecked {
-        display: none;
-       }
-    }
+  input[type='checkbox'] {
+    display: none;
   }
 
-  .ipMessage{
+  .checkbox #checked {
     display: none;
-    font-size: var(--text-16);
-    color: var(--black);
+  }
 
-    @media (width >= 48rem){
-        display: block;
-        float: right;
-        margin-top: 0.625rem;
+  input[type='checkbox']:checked {
+    + .checkbox #checked {
+      display: block;
     }
-
-    .ipStatusOff {
-      margin-left: 0.5rem;
-      color: var(--silver);
-    }
-
-    .ipStatusOn {
+    + .checkbox #unchecked {
       display: none;
-      color: var(--naverGreen);
-
     }
+  }
+}
+
+.ipMessage {
+  display: none;
+  font-size: var(--text-16);
+  color: var(--black);
+
+  @media (width >= 48rem) {
+    display: block;
+    float: right;
+    margin-top: 0.625rem;
+  }
+
+  #ipStatusOff {
+    margin-left: 0.5rem;
+    color: var(--silver);
+  }
+
+  #ipStatusOn {
+    display: none;
+    color: var(--naverGreen);
   }
 }
