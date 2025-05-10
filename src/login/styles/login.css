@@ -43,10 +43,7 @@ body {
   padding-right: 1.25rem;
   margin: 0 auto;
 
-  a,
-  h1 {
-    align-self: flex-start;
-    margin-left: 1.25rem;
+  a {
     text-decoration: none;
     color: inherit;
   }
