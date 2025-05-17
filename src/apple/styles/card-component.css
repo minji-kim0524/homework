@@ -1,3 +1,594 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+/* 공통 스타일링 (버튼) */
+.more {
+  /* background: var(--blue-300); */
+  /* border: 1px solid var(--blue-300); */
+  border-radius: 980px;
+
+  font-size: var(--xx-small-text);
+  /* color: var(--white); */
+
+  padding-block: var(--x-small-spacing);
+  padding-inline: var(--small-spacing);
+  margin-inline-end: var(--base-spacing);
+
+  cursor: pointer;
+}
+
+.shopping {
+  /* background: transparent; */
+  /* border: 1px solid var(--blue-300); */
+  border-radius: 980px;
+
+  font-size: var(--xx-small-text);
+  /* color: var(--blue-300); */
+
+  padding-block: var(--x-small-spacing);
+  padding-inline: var(--small-spacing);
+
+  cursor: pointer;
+}
+
+/* 헤더 스타일링 */
+header {
+  display: flex;
+  font-size: var(--xx-small-text);
+  color: var(--black);
+  inline-size: 100%;
+  block-size: 44px;
+  padding-inline: 22px;
+  justify-content: center;
+  align-items: center;
+  /* grid-column: 1 / span 2; */
+}
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.productList {
+  display: grid;
+  row-gap: var(--small-spacing);
+  min-inline-size: 20rem;
+
+  /* iPadPro 컴포넌트 스타일링 */
+  .iPadPro {
+    display: flex;
+    inline-size: 100%;
+    position: relative;
+    flex-flow: column nowrap;
+    background-image: url(../products/ipad_pro.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/ipad_pro_wide.jpeg);
+      background-size: cover;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/ipad_pro_2x.jpeg);
+    }
+
+    /* 1024px이상, 픽셀밀도 2배율 적용 */
+    @media (width >= 64rem) and (resolution: 2dppx) {
+      background-image: url(../products/ipad_pro_wide_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--white);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .iPadProInfo {
+      font-size: var(--base-text);
+      color: var(--white);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .release {
+      font-size: var(--small-text);
+      color: var(--gray);
+      font-weight: 300;
+      margin-block-end: var(--x-small-spacing);
+    }
+
+    .more {
+      background: var(--blue-300);
+      border: 1px solid var(--blue-300);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--blue-300);
+      color: var(--blue-300);
+    }
+
+    button.more:hover {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+  }
+
+  /* iPadAir 컴포넌트 스타일링 */
+  .iPadAir {
+    display: flex;
+    inline-size: 100%;
+    position: relative;
+    flex-flow: column nowrap;
+    background-image: url(../products/ipad_air.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/ipad_air_wide.jpeg);
+      background-size: cover;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/ipad_air_2x.jpeg);
+    }
+
+    /* 1024px이상, 픽셀밀도 2배율 적용 */
+    @media (width >= 64rem) and (resolution: 2dppx) {
+      background-image: url(../products/ipad_air_wide_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--black);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .iPadAirInfo {
+      font-size: var(--base-text);
+      color: var(--black);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .release {
+      font-size: var(--small-text);
+      color: var(--gray);
+      font-weight: 300;
+      margin-block-end: var(--x-small-spacing);
+    }
+
+    .more {
+      background: var(--black);
+      border: 1px solid var(--black);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--black);
+      color: var(--black);
+    }
+
+    button.more:hover {
+      background: var(--light-black);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--light-black);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--black);
+      color: var(--white);
+    }
+  }
+
+  /* iPhonePro 컴포넌트 스타일링 */
+  .iPhonePro {
+    display: flex;
+    /* inline-size: 100%;
+    position: relative; */
+    flex-flow: column nowrap;
+    background-image: url(../products/iphone15_pro.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/iphone15_pro_wide.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/iphone15_pro_2x.jpeg);
+    }
+
+    /* 1024px이상, 픽셀밀도 2배율 적용 */
+    @media (width >= 64rem) and (resolution: 2dppx) {
+      background-image: url(../products/iphone15_pro_wide_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--white);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .iPhoneProInfo {
+      font-size: var(--base-text);
+      color: var(--white);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .more {
+      background: var(--blue-300);
+      border: 1px solid var(--blue-300);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--blue-300);
+      color: var(--blue-300);
+    }
+
+    button.more:hover {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+  }
+
+  /* iPhone 컴포넌트 스타일링 */
+  .iPhone {
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: url(../products/iphone15.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/iphone15.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/iphone15_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--black);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .iPhoneInfo {
+      font-size: var(--base-text);
+      color: var(--black);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .more {
+      background: var(--black);
+      border: 1px solid var(--black);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--black);
+      color: var(--black);
+    }
+
+    button.more:hover {
+      background: var(--light-black);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--light-black);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--black);
+      color: var(--white);
+    }
+  }
+
+  /* watch 컴포넌트 스타일링 */
+  .watch {
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: url(../products/apple_watch.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/apple_watch.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/apple_watch_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--white);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .watchInfo {
+      font-size: var(--base-text);
+      color: var(--white);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .more {
+      background: var(--blue-300);
+      border: 1px solid var(--blue-300);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--blue-300);
+      color: var(--blue-300);
+    }
+
+    button.more:hover {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+  }
+
+  /* macBookAir 컴포넌트 스타일링 */
+  .macBookAir {
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: url(../products/macbook_air.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/macbook_air.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/macbook_air_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--black);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .macBookAirInfo {
+      font-size: var(--base-text);
+      color: var(--black);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .more {
+      background: var(--black);
+      border: 1px solid var(--black);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--black);
+      color: var(--black);
+    }
+
+    button.more:hover {
+      background: var(--light-black);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--light-black);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--black);
+      color: var(--white);
+    }
+  }
+
+  /* airPodsPro 컴포넌트 스타일링 */
+  .airPodsPro {
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: url(../products/airpods_pro.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    block-size: var(--size);
+    justify-items: center;
+    align-items: center;
+    padding-block-start: var(--large-spacing);
+
+    /* 1024px 이상 */
+    @media (width >= 64rem) {
+      background-image: url(../products/airpods_pro.jpeg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* 픽셀밀도 2배율 적용 */
+    @media (resolution: 2dppx) {
+      background-image: url(../products/airpods_pro_2x.jpeg);
+    }
+
+    h2 {
+      font-size: var(--large-text);
+      color: var(--white);
+      font-weight: 700;
+      margin-block-end: var(--small-spacing);
+    }
+
+    .airPodsProInfo {
+      font-size: var(--base-text);
+      color: var(--white);
+      line-height: var(--line-normal);
+      margin-block-end: var(--x-small-spacing);
+      text-align: center;
+    }
+
+    .more {
+      background: var(--blue-300);
+      border: 1px solid var(--blue-300);
+      color: var(--white);
+    }
+
+    .shopping {
+      background: transparent;
+      border: 1px solid var(--blue-300);
+      color: var(--blue-300);
+    }
+
+    button.more:hover {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.more:focus-within {
+      background: var(--blue-200);
+      color: var(--white);
+    }
+
+    button.shopping:hover {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+
+    button.shopping:focus-within {
+      background: var(--blue-300);
+      color: var(--white);
+    }
+  }
+}
